@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="password.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <h2 style="color:black;"><b>REGISTER PAGE</b></h2>
+
+    <form action="./login.html">   
+        <img src="./images/user.png.jpg" > 
+        <div class="input-box">
+            <span><i class="fa fa-user-o"></i></span>
+            <input type="text" placeholder="user name" required>
+        </div>
+        <div class="input-box">
+            <span><i class="fa fa-envelope-o"></i></span>
+            <input type="email" placeholder="Email" required>
+        </div>
+        <div class="input-box">
+            <span><i class="fa fa-phone"></i></span>
+            <input type="tel" placeholder="Phone number" pattern="[0-9]{10}" required
+            title="should conatain 10 numbers only"><br>
+        </div>
+        <div class="input-box">
+            <span><i class="fa fa-key"></i></span>
+            <input type="password" id="password" placeholder="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+            title="Must contain atleat one number, one lowercase, one uppercase and Minimun 8 characters" required>
+        </div>
+        <button id="btnreg" type="submit"><i class="fa fa-sign-in"></i>Register</button>
+    </form>
+    <script type="text/javascript">
+        $(function() {
+            $("#password").passwordStrength();
+        });
+    </script>
+    
+</body>
+</html>
